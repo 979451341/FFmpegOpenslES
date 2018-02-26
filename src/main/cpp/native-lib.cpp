@@ -166,7 +166,8 @@ Java_com_test_ffmpegopensles_MusicPlay_create(JNIEnv *env, jobject instance) {
     createEngine();
     createMixVolume();
     createPlayer();
-
+    //开始播放
+    getQueueCallBack(slBufferQueueItf,NULL);
 }
 
 extern "C"
@@ -175,8 +176,7 @@ Java_com_test_ffmpegopensles_MusicPlay_play(JNIEnv *env, jobject instance) {
     //播放
     (*slPlayItf)->SetPlayState(slPlayItf,SL_PLAYSTATE_PLAYING);
 
-    //开始播放
-    getQueueCallBack(slBufferQueueItf,NULL);
+
 
 }
 
